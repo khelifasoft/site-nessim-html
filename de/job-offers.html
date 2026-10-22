@@ -16,7 +16,10 @@
 <header class="site-header">
   <div class="topbar"><div class="wrap">
     <span class="tb-info"><a href="tel:+4945188339754">0451 - 8833 9754</a><a href="mailto:info@profis-industrie-service.de">info@profis-industrie-service.de</a></span>
-    <div class="langs" aria-label="Sprache"><a href="../job-offers.html" hreflang="en" lang="en">EN</a><a href="job-offers.html" hreflang="de" lang="de" aria-current="true">DE</a><a href="../fr/offres-demplois.html" hreflang="fr" lang="fr">FR</a></div>
+    <div class="tb-right"><div class="langs" aria-label="Sprache"><a href="../job-offers.html" hreflang="en" lang="en">EN</a><a href="job-offers.html" hreflang="de" lang="de" aria-current="true">DE</a><a href="../fr/offres-demplois.html" hreflang="fr" lang="fr">FR</a></div>
+    <button type="button" class="lang-open" data-modal="langmodal" aria-label="Sprache" aria-controls="langmodal" aria-expanded="false"><span class="flag"><svg viewBox="0 0 40 40" aria-hidden="true"><clipPath id="c-de"><circle cx="20" cy="20" r="20"/></clipPath><g clip-path="url(#c-de)"><rect width="40" height="14" fill="#000"/><rect y="13" width="40" height="14" fill="#dd0000"/><rect y="26" width="40" height="14" fill="#ffce00"/></g></svg></span><b>DE</b></button>
+    <button type="button" class="cart-open" data-panel="cartpanel" aria-label="Warenkorb" aria-controls="cartpanel" aria-expanded="false"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8zM9 8V6a3 3 0 016 0v2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><i class="cart-n" hidden>0</i></button>
+    <button type="button" class="sp-open" data-panel="sidepanel" aria-label="Informationen" aria-controls="sidepanel" aria-expanded="false"><span></span></button></div>
   </div></div>
   <div class="mainbar"><div class="wrap">
     <a class="brand" href="index.html"><img src="../assets/img/logo.png" alt="Profis Industrie Service GmbH" width="170" height="81"></a>
@@ -85,6 +88,25 @@
 <p>Wichtige Fähigkeiten:<br/>&gt; gute Deutschkenntnisse<br/>&gt; Engagement &amp; Flexibilität<br/>&gt; Teamfähigkeit und Zuverlässigkeit<br/>&gt; Kunden- und lösungsorientiertes Arbeiten<br/>&gt; Abgeschlossene Ausbildung zur Fachkraft für Gebäudereinigung oder vergleichbare Berufserfahrung</p>
 <p>Bitte senden Sie die Bewerbung an: info@profis-industrie-service.de</p></div>
 </main>
+<div class="sp-overlay" hidden></div>
+<div id="langmodal" class="langmodal" role="dialog" aria-modal="true" aria-label="Sprache wechseln" aria-hidden="true" hidden>
+  <button type="button" class="lm-close" aria-label="Close"><svg viewBox="0 0 16 16" width="22" height="22" aria-hidden="true"><path d="M2 2l12 12M14 2L2 14" stroke="currentColor" stroke-width="1.8" fill="none"/></svg></button>
+  <div class="lm-in"><h2>Sprache wechseln</h2><div class="lm-list"><a href="../fr/offres-demplois.html" hreflang="fr" lang="fr"><span class="flag"><svg viewBox="0 0 40 40" aria-hidden="true"><clipPath id="c-fr"><circle cx="20" cy="20" r="20"/></clipPath><g clip-path="url(#c-fr)"><rect width="14" height="40" fill="#0055a4"/><rect x="13" width="14" height="40" fill="#fff"/><rect x="26" width="14" height="40" fill="#ef4135"/></g></svg></span>Français</a><a href="job-offers.html" hreflang="de" lang="de" aria-current="true"><span class="flag"><svg viewBox="0 0 40 40" aria-hidden="true"><clipPath id="c-de"><circle cx="20" cy="20" r="20"/></clipPath><g clip-path="url(#c-de)"><rect width="40" height="14" fill="#000"/><rect y="13" width="40" height="14" fill="#dd0000"/><rect y="26" width="40" height="14" fill="#ffce00"/></g></svg></span>Deutsch</a><a href="../job-offers.html" hreflang="en" lang="en"><span class="flag"><svg viewBox="0 0 40 40" aria-hidden="true"><clipPath id="c-en"><circle cx="20" cy="20" r="20"/></clipPath><g clip-path="url(#c-en)"><rect width="40" height="40" fill="#012169"/><path d="M0 0l40 40M40 0L0 40" stroke="#fff" stroke-width="8"/><path d="M0 0l40 40M40 0L0 40" stroke="#c8102e" stroke-width="3"/><path d="M20 0v40M0 20h40" stroke="#fff" stroke-width="12"/><path d="M20 0v40M0 20h40" stroke="#c8102e" stroke-width="7"/></g></svg></span>English</a></div></div>
+</div>
+<aside id="cartpanel" class="sidepanel cartpanel" aria-label="Warenkorb" aria-hidden="true" data-send="Anfrage senden" data-rm="Entfernen" data-empty="Keine Produkte im Warenkorb." data-mail="info@profis-industrie-service.de" data-subject="Warenkorb – Profis Industrie Service">
+  <button type="button" class="sp-close" aria-label="Close"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M2 2l12 12M14 2L2 14" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></button>
+  <h2 class="cart-title">Warenkorb</h2>
+  <ul class="cart-list"></ul><p class="cart-empty">Keine Produkte im Warenkorb.</p>
+  <div class="cart-foot" hidden><a class="btn dark cart-send" href="#">Anfrage senden</a><p class="note">Ihr E-Mail-Programm öffnet sich mit der Liste der gewählten Produkte.</p></div>
+</aside>
+<aside id="sidepanel" class="sidepanel" aria-label="Informationen" aria-hidden="true">
+  <button type="button" class="sp-close" aria-label="Close"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M2 2l12 12M14 2L2 14" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></button>
+  <img src="../assets/img/logo-color.png" alt="Profis Industrie Service GmbH" width="300" height="143">
+  <p>Die Herstellung gesunder Lebensmittel ist für uns der Beginn eines gesunden Lebens. Eine superreine Umwelt. Hygiene bedeutet nicht, nachzuarbeiten, sondern von Anfang an mit höchster Qualität zu beginnen. Die Profis Industrie Service GmbH steht für qualitativ hochwertige Arbeit und exzellenten Kundenservice.</p>
+  <h2>ADRESSEN</h2><p>Holstenstraße 40, 23552 Lübeck<br>Hanauer Landstraße 115, 63791 Karlstein</p>
+  <h2>TELEFON</h2><p><a href="tel:+4945188339754">+49 451 / 8833 9754</a></p>
+  <h2>E-Mail</h2><p><a href="mailto:info@profis-industrie-service.de">info@profis-industrie-service.de</a></p>
+</aside>
 <footer class="site-footer">
   <div class="wrap foot">
     <div class="about"><img src="../assets/img/logo.png" alt="" width="140" height="67"><p>Die Herstellung gesunder Lebensmittel ist für uns der Beginn eines gesunden Lebens. Eine superreine Umwelt. Hygiene bedeutet nicht, nachzuarbeiten, sondern von Anfang an mit höchster Qualität zu beginnen. Die Profis Industrie Service GmbH steht für qualitativ hochwertige Arbeit und exzellenten Kundenservice.</p></div>
