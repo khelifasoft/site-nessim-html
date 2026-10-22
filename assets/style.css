@@ -214,3 +214,23 @@ html:not(.js) .langs{display:flex}html:not(.js) .lang-open,html:not(.js) .cart-o
  .slide .scont h2{font-size:1.7rem}.slide .scont p{font-size:14.5px}
  .tnavs{padding:0}.tnav{padding:14px 12px 12px}
 }
+
+/* ---------- bannières de page + page entreprise ---------- */
+.page-hero{text-align:center;padding:84px 0 66px;background-color:#2a4a99}
+.page-hero::before{display:none}
+.page-hero h1{font-size:clamp(1.7rem,3.2vw,2.4rem)}.crumbs{justify-content:center;font-size:12px}
+.prose .gallery.logos{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:18px 26px}.prose .gallery.logos img{aspect-ratio:auto;object-fit:contain;max-height:80px;box-shadow:none;border-radius:0;cursor:default}
+.crow{padding:44px 0;border-bottom:0}.crow.tint{background:#dbe0ed}
+.cgrid{display:grid;grid-template-columns:230px 1fr;gap:34px;max-width:860px}
+.cgrid .hd.side{margin:0;font-size:.95rem;align-self:start;gap:12px}.cgrid .hd.side::after{content:"";width:34px;height:2px;background:var(--red);order:2}.cgrid .hd.side::before{display:none}
+.cbody{border-left:1px solid var(--line);padding-left:30px}.cbody p{font-size:14.5px}.cbody>*:first-child{margin-top:0}
+.checks{list-style:none;margin:0;padding:0}.checks li{position:relative;padding:5px 0 5px 26px;font-size:14.5px}.checks li::before{content:"";position:absolute;left:2px;top:12px;width:12px;height:6px;border:solid var(--red);border-width:0 0 2px 2px;transform:rotate(-45deg)}
+.tint .cbody{border-left:0;padding-left:0}
+.ev{display:grid;grid-template-columns:130px 1fr;gap:18px;padding:12px 0;align-items:start}
+.when small{display:block;color:var(--red);font-size:12.5px;letter-spacing:.04em}.when b{font:700 1.15rem "Fira Sans",sans-serif;color:#000}
+.what{position:relative;padding-left:34px}.what::before{content:"";position:absolute;left:0;top:12px;width:22px;height:2px;background:var(--red)}
+.what h3{margin:0 0 .25em;font-size:.98rem}.what p{margin:0;font-size:14px}
+.cert{padding:50px 0 30px;border-bottom:1px dotted #bbb}.ctr{text-align:center;font-size:1.25rem;margin:0 0 26px}
+.isos{display:flex;justify-content:center;gap:90px;flex-wrap:wrap}.isobox{text-align:center;max-width:210px}.isobox img{width:96px;height:auto;margin:0 auto 10px}.isobox h3{margin:.2em 0;font-size:.95rem}.isobox p{font-size:12px;color:#999;margin:0}
+.cpart{margin-block:44px 10px}.notice.wrap{margin-block:20px 0}
+@media(max-width:760px){.cgrid{grid-template-columns:1fr;gap:12px}.cbody{border-left:0;padding-left:0}.ev{grid-template-columns:1fr;gap:4px}.isos{gap:40px}}
