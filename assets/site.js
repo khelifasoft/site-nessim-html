@@ -76,17 +76,16 @@
     function c(){lb.classList.remove('on');setTimeout(function(){lb.remove()},250);document.removeEventListener('keydown',k)}
     function k(e){if(e.key==='Escape')c()}lb.addEventListener('click',c);document.addEventListener('keydown',k)})});
 })();
-// ===== carrousel de logos =====
-(function(){
-  var car=document.querySelector('.lcar');if(!car)return;
-  var tr=car.querySelector('.ltrack'),items=tr.children,pos=0,t;
-  function vis(){return innerWidth<=700?2:4}
-  function go(p){var max=Math.max(0,items.length-vis());pos=p>max?0:(p<0?max:p);tr.style.transform='translateX(-'+(pos*items[0].getBoundingClientRect().width)+'px)'}
+// ===== carrousels (logos et photos) =====
+document.querySelectorAll('.lcar').forEach(function(car){
+  var tr=car.querySelector('.ltrack'),items=tr.children,pos=0,t,base=+car.dataset.vis||4;
+  function vis(){return innerWidth<=700?Math.min(base,2):(innerWidth<=1000?Math.min(base,3):base)}
+  function go(p){car.style.setProperty('--vis',vis());var max=Math.max(0,items.length-vis());pos=p>max?0:(p<0?max:p);tr.style.transform='translateX(-'+(pos*items[0].getBoundingClientRect().width)+'px)'}
   car.querySelector('.lnext').onclick=function(){go(pos+1);rst()};car.querySelector('.lprev').onclick=function(){go(pos-1);rst()};
-  function rst(){clearInterval(t);t=setInterval(function(){go(pos+1)},3200)}
+  function rst(){clearInterval(t);t=setInterval(function(){go(pos+1)},3600)}
   car.addEventListener('mouseenter',function(){clearInterval(t)});car.addEventListener('mouseleave',rst);
-  addEventListener('resize',function(){go(0)});rst();
-})();
+  addEventListener('resize',function(){go(0)});go(0);rst();
+});
 // ===== animations =====
 (function(){
   document.documentElement.classList.add('js');
@@ -100,7 +99,8 @@
   }else{els.forEach(function(el){el.classList.add('in')})}
   // ombre de l'en-tête
   var h=document.querySelector('.site-header');
-  addEventListener('scroll',function(){h.classList.toggle('stuck',scrollY>10)},{passive:true});
+  var tt=document.querySelector('.totop');if(tt)tt.addEventListener('click',function(){scrollTo({top:0,behavior:'smooth'})});
+  addEventListener('scroll',function(){var y=scrollY,st=h.classList.contains('stuck');if(!st&&y>90)h.classList.add('stuck');else if(st&&y<20)h.classList.remove('stuck')},{passive:true});
   // diaporama
   var sl=document.querySelector('.slider');
   if(!sl)return;
