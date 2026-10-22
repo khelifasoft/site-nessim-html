@@ -21,6 +21,17 @@
     var d=new FormData(f),body='Name: '+d.get('n')+'\nE-mail: '+d.get('e')+'\n\n'+d.get('m');
     location.href='mailto:'+f.dataset.to+'?subject='+encodeURIComponent(d.get('s'))+'&body='+encodeURIComponent(body)})}
 })();
+// ===== carrousel de logos =====
+(function(){
+  var car=document.querySelector('.lcar');if(!car)return;
+  var tr=car.querySelector('.ltrack'),items=tr.children,pos=0,t;
+  function vis(){return innerWidth<=700?2:4}
+  function go(p){var max=Math.max(0,items.length-vis());pos=p>max?0:(p<0?max:p);tr.style.transform='translateX(-'+(pos*items[0].getBoundingClientRect().width)+'px)'}
+  car.querySelector('.lnext').onclick=function(){go(pos+1);rst()};car.querySelector('.lprev').onclick=function(){go(pos-1);rst()};
+  function rst(){clearInterval(t);t=setInterval(function(){go(pos+1)},3200)}
+  car.addEventListener('mouseenter',function(){clearInterval(t)});car.addEventListener('mouseleave',rst);
+  addEventListener('resize',function(){go(0)});rst();
+})();
 // ===== animations =====
 (function(){
   document.documentElement.classList.add('js');
