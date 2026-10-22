@@ -300,3 +300,20 @@ a.chip:hover{color:#fff}
 .pact .padd{margin-top:0}
 .noprod{grid-column:1/-1;text-align:center;color:#888;padding:40px 0}
 .pbody{display:flex;flex-direction:column;flex:1}.pbody .pact{margin-top:auto;padding-top:12px}
+
+/* ---------- alignement et rythme des pages de contenu ---------- */
+.elrow.narrow{max-width:1170px}
+.elrow.narrow .elcol{max-width:100%!important;flex:1 1 100%!important}
+.elrow.narrow .te,.elrow.narrow .iconlist,.elrow.narrow .accs{max-width:880px}
+.elsec.ctr .te{margin-inline:auto}
+.elsec.ctr .elrow.narrow>.elcol>h2,.elsec.ctr .elrow.narrow>.elcol>h3,.elsec.ctr .elrow.narrow>.elcol>h4{text-align:center}
+.te p{font-size:15.5px;line-height:1.85;margin-bottom:1.1em}
+.te>p:first-child{font-size:15.5px;line-height:1.85;color:inherit}
+.elrow.narrow .te>p:first-child{font-size:17px;line-height:1.8;color:#444}
+.elsec{margin-block:0}
+.elsec .elcol>h2:first-child{margin-top:.1em}
+.elrow{gap:44px}
+.elcol .elimg img{border-radius:4px;box-shadow:0 8px 26px rgba(29,68,137,.12)}
+.elrow{--gap:44px;gap:var(--gap)}
+@media(max-width:1000px){.elrow{--gap:28px}}
+.page-hero+.elsec,.notice+.elsec{margin-top:46px}.page-hero+.elsec.ctr{margin-top:56px}
