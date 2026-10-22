@@ -59,6 +59,23 @@
   m.addEventListener('click',function(e){if(e.target===m||e.target.classList.contains('lm-in'))close()});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&m.classList.contains('on'))close()});
 })();
+// ===== compteurs =====
+(function(){
+  var els=document.querySelectorAll('.stat b[data-to]');if(!els.length||!('IntersectionObserver' in window))return;
+  var rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;io.unobserve(e.target);
+    var el=e.target,to=+el.dataset.to,suf=el.dataset.suf||'',t0=null;if(rm||to<5){el.textContent=to+suf;return}
+    var from=to>1000?to-60:0;(function f(t){t0=t0||t;var p=Math.min(1,(t-t0)/1400),v=Math.round(from+(to-from)*(1-Math.pow(1-p,3)));el.textContent=v+suf;if(p<1)requestAnimationFrame(f)})(performance.now())})},{threshold:.6});
+  els.forEach(function(el){io.observe(el)});
+})();
+// ===== lightbox images =====
+(function(){
+  document.querySelectorAll('.prose img').forEach(function(im){im.addEventListener('click',function(){
+    var lb=document.createElement('div');lb.className='lightbox';var i=document.createElement('img');i.src=im.src;i.alt=im.alt;lb.appendChild(i);document.body.appendChild(lb);
+    requestAnimationFrame(function(){lb.classList.add('on')});
+    function c(){lb.classList.remove('on');setTimeout(function(){lb.remove()},250);document.removeEventListener('keydown',k)}
+    function k(e){if(e.key==='Escape')c()}lb.addEventListener('click',c);document.addEventListener('keydown',k)})});
+})();
 // ===== carrousel de logos =====
 (function(){
   var car=document.querySelector('.lcar');if(!car)return;
