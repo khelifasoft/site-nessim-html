@@ -26,7 +26,7 @@
   document.documentElement.classList.add('js');
   var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   // apparition au défilement
-  var els=document.querySelectorAll('.reveal,.prose>*,.prod,.card,.zoom');
+  var els=document.querySelectorAll('.reveal,.prose>*,.prod,.zoom');
   if('IntersectionObserver' in window&&!rm){
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){
       var d=(e.target.dataset.d||0);e.target.style.transitionDelay=d+'ms';e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
@@ -38,8 +38,8 @@
   // diaporama
   var sl=document.querySelector('.slider');
   if(!sl)return;
-  var slides=[].slice.call(sl.querySelectorAll('.slide')),dots=[].slice.call(sl.querySelectorAll('.dot')),
-      tn=[].slice.call(sl.querySelectorAll('.tnav')),iv=+sl.dataset.interval||5000,cur=0,t,paused=false;
+  var slides=[].slice.call(sl.querySelectorAll('.slide')),dots=[],
+      tn=[].slice.call(document.querySelectorAll('.tnav')),iv=+sl.dataset.interval||5000,cur=0,t,paused=false;
   sl.style.setProperty('--iv',iv+'ms');
   function go(i){
     cur=(i+slides.length)%slides.length;
