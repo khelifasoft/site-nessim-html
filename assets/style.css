@@ -389,3 +389,27 @@ body{font-size:16px;line-height:1.8}
 .pg-team .elimg img{width:240px;height:310px;max-height:none;object-fit:cover;object-position:50% 12%;border-radius:4px;margin-inline:auto}
 .pg-team .elcol h3,.pg-team .elcol h2{text-align:center}
 .pg-team .te,.pg-team .te p{text-align:center;margin-inline:auto}
+
+/* ================= texte plus grand et plus aéré (comme l'ancien site) ================= */
+body{font-size:17px}
+.te p,.accb p,.cbody p{font-size:17px;line-height:1.7}
+.te p{margin-bottom:1.2em}
+.te>p:first-child{font-size:17px}
+.elrow.narrow .te>p:first-child{font-size:19px;line-height:1.7}
+.elsec .iconlist li,.checks li,.acc summary{font-size:17px}
+.elsec h2{font-size:clamp(1.7rem,2.8vw,2.2rem)}.elsec h3{font-size:1.3rem}.elsec h4{font-size:1.12rem}
+.elsec{padding-block:46px}
+.elsec[style*="background"]{padding-block:64px}
+.page-hero{padding:104px 0 86px}.page-hero h1{font-size:clamp(2rem,3.6vw,2.8rem)}
+.crumbs{font-size:13px}
+/* page entreprise */
+.cgrid{max-width:1170px;grid-template-columns:380px 1fr;gap:44px}
+.cgrid .hd.side{font-size:1.5rem;gap:16px}.cgrid .hd.side::after{width:42px}
+.cbody{padding-left:36px}.crow{padding:58px 0}
+.checks li{padding:7px 0 7px 30px}.checks li::before{top:17px;width:13px;height:7px}
+.ev{grid-template-columns:200px 1fr;padding:16px 0}
+.when small{font-size:14px}.when b{font-size:1.35rem}
+.what h3{font-size:1.12rem}.what p{font-size:16.5px}
+.isobox h3{font-size:1.05rem}.isobox p{font-size:13px}
+.cert{padding:64px 0 40px}.ctr{font-size:1.5rem}
+@media(max-width:900px){.cgrid{grid-template-columns:1fr;gap:14px}.cbody{padding-left:0;border-left:0}.ev{grid-template-columns:1fr}.te p,.accb p,.cbody p{font-size:16.5px}}
