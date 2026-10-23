@@ -317,3 +317,70 @@ a.chip:hover{color:#fff}
 .elrow{--gap:44px;gap:var(--gap)}
 @media(max-width:1000px){.elrow{--gap:28px}}
 .page-hero+.elsec,.notice+.elsec{margin-top:46px}.page-hero+.elsec.ctr{margin-top:56px}
+
+/* ---------- images : tailles d'affichage plus modestes ---------- */
+.elcol .elimg img{max-height:430px;width:auto;max-width:100%;object-fit:cover;margin-inline:auto}
+.elcol:only-child .elimg img{max-height:520px}
+.elimg{text-align:center}
+.prose img,.elimg img{height:auto}
+.sbody .simg img{object-fit:cover}
+.lcar.photos .li img{max-height:420px}
+.ph img{max-height:380px}
+
+/* ================= typographie et mise en page plus soignées ================= */
+body{font-size:16px;line-height:1.8}
+.te p,.accb p{font-size:16px;line-height:1.85;color:#5f6368}
+.te strong,.te b{color:#222}
+.elrow.narrow .te>p:first-child{font-size:18px;line-height:1.8;color:#3b3f45}
+.te{max-width:74ch}.elrow.narrow .te,.elsec.ctr .te{max-width:820px}
+.elsec h2{font-size:clamp(1.55rem,2.6vw,2rem);line-height:1.2;letter-spacing:-.01em}
+.elsec h3{font-size:1.2rem}.elsec h4{font-size:1.05rem}
+.elsec>.wrap>.elcol>h2:first-child::after{margin-top:14px}
+.elsec{margin-block:0;padding-block:34px}
+.elsec[style*="background"]{padding-block:54px}
+.elsec .iconlist li{font-size:16px;padding:6px 0}
+.page-hero{padding:92px 0 70px}.page-hero h1{font-weight:700;letter-spacing:-.01em}
+.page-hero+.elsec{margin-top:24px}
+.te p+p{margin-top:-.2em}
+.te ul{margin:.6em 0 1.2em}.te li{margin:.35em 0}
+.elimg img{border-radius:6px}
+/* ================= diaporama de photos ================= */
+.lcar.photos{position:relative;display:block;max-width:900px;margin:22px auto 34px}
+.lcar.photos .lview{border-radius:8px;box-shadow:0 14px 40px rgba(20,40,90,.18)}
+.lcar.photos .li{padding:0}.lcar.photos .li img{border-radius:0;aspect-ratio:16/9;max-height:none;width:100%;object-fit:cover}
+.lcar.photos .lprev,.lcar.photos .lnext{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.92);color:#111;display:grid;place-items:center;padding:0;z-index:3;box-shadow:0 4px 14px rgba(0,0,0,.25);opacity:0;transition:opacity .25s,background .2s}
+.lcar.photos:hover .lprev,.lcar.photos:hover .lnext,.lcar.photos .lprev:focus-visible,.lcar.photos .lnext:focus-visible{opacity:1}
+.lcar.photos .lprev{left:14px}.lcar.photos .lnext{right:14px}.lcar.photos .lprev:hover,.lcar.photos .lnext:hover{background:#fff;color:var(--red)}
+.ldots{display:flex;justify-content:center;gap:9px;margin-top:14px}.ldots button{width:9px;height:9px;border-radius:50%;border:0;background:#c9cfda;padding:0;cursor:pointer;transition:.25s}.ldots button.on{background:var(--red);width:26px;border-radius:5px}
+@media(hover:none){.lcar.photos .lprev,.lcar.photos .lnext{opacity:1}}
+/* ================= diaporama d'accueil amélioré ================= */
+.progress{display:none}
+.tnav::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:3px;background:var(--red);transform:scaleX(0);transform-origin:left}
+.slider.run+.tabsbar .tnav.on::after{animation:tprog var(--iv,5s) linear forwards}
+.slider:not(.run)+.tabsbar .tnav.on::after{transform:scaleX(1);opacity:.35}
+@keyframes tprog{to{transform:scaleX(1)}}
+.slider .arrow{width:52px;height:52px;border-radius:50%;background:rgba(8,26,56,.35);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.35);transition:background .25s,transform .25s}
+.slider .arrow:hover{background:var(--red);border-color:var(--red)}
+.slide::after{background:linear-gradient(90deg,rgba(14,32,76,.7),rgba(14,32,76,.18) 62%)}
+.scont h2{font-size:clamp(1.9rem,3.8vw,2.9rem)}
+.slider{min-height:580px}.slides,.slide .wrap{min-height:580px}
+.slide .sbg{transition:transform 8s ease-out}
+.counter{position:absolute;right:26px;bottom:22px;z-index:6;color:#fff;font:700 13px "Fira Sans",sans-serif;letter-spacing:.14em;text-shadow:0 1px 6px rgba(0,0,0,.4)}
+.counter b{font-size:20px}
+
+/* ================= menus déroulants comme l'ancien site ================= */
+.nav ul.sub{background:#1b1b1b;min-width:250px;padding:14px 22px 18px;border-top:0;box-shadow:0 18px 40px rgba(0,0,0,.35);border-radius:0 0 3px 3px}
+.nav ul.sub a{position:relative;font:400 15px/1.35 "Fira Sans",sans-serif;padding:8px 0 8px 15px;color:#fff;border:0;width:100%;white-space:normal}
+.nav ul.sub a::before{content:"";position:absolute;left:0;top:50%;width:5px;height:5px;border:solid currentColor;border-width:1.6px 1.6px 0 0;transform:translateY(-50%) rotate(45deg)}
+.nav ul.sub a:hover,.nav ul.sub a[aria-current]{color:var(--sky)}
+.nav ul.sub.mega{flex-direction:row;padding:0;min-width:0;width:max-content;max-width:min(760px,92vw)}
+.nav ul.sub.mega>li.mcol{padding:22px 30px 24px;flex:1 1 auto;min-width:250px}
+.nav ul.sub.mega>li.mcol+li.mcol{border-left:1px solid #2e2e2e}
+.mh{display:block;font:500 15px "Fira Sans",sans-serif;color:#fff;padding:0 0 13px;margin-bottom:10px;border-bottom:1px solid #353535}
+.mlist{list-style:none;margin:0;padding:0;display:block!important}
+.nav .has-sub:hover>ul.sub.mega,.nav .has-sub.open>ul.sub.mega,.nav .has-sub:focus-within>ul.sub.mega{display:flex}
+@media(max-width:1060px){
+ .nav ul.sub.mega{flex-direction:column;width:auto;max-width:none}
+ .nav ul.sub.mega>li.mcol{padding:6px 0 10px;min-width:0}.nav ul.sub.mega>li.mcol+li.mcol{border-left:0}
+ .nav ul.sub{padding:6px 0 10px 14px;box-shadow:none}.mh{color:#8fd3f4;padding-bottom:6px;border-bottom:0;margin:6px 0 2px}
+}
