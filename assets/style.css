@@ -514,3 +514,39 @@ body{font-size:17px}
  body.nav-lock{overflow:hidden}
  .site-header.menu-open .tb-right{gap:16px}
 }
+
+/* ===== tablette (769–1060px) : en-tête et menu comme sur mobile, diaporama pleine image ===== */
+@media(min-width:769px) and (max-width:1060px){
+ :root{--hh:96px}
+ .site-header,.site-header.stuck{background:#000}
+ .topbar,.site-header.stuck .topbar{display:none}
+ .site-header.menu-open .topbar{display:block;position:absolute;top:0;right:10px;left:auto;width:auto;height:96px;background:none;border:0;z-index:6}
+ .site-header.menu-open .topbar .wrap{width:auto;height:100%;padding:0;margin:0;justify-content:flex-end}
+ .tb-info{display:none!important}
+ .mainbar,.site-header.stuck .mainbar{height:96px;background:#000}
+ .mainbar .wrap,.site-header.stuck .mainbar .wrap{width:100%;height:100%;padding:0;justify-content:center;position:relative}
+ .brand,.site-header.stuck .brand{position:static;width:auto;height:auto;background:none}
+ .brand img,.site-header.stuck .brand img{width:210px;height:auto}
+ .site-header.menu-open .brand,.site-header.menu-open .brand img{display:none}
+ .burger{position:absolute;left:24px;top:50%;transform:translateY(-50%);margin:0;z-index:7;display:block}
+ .burger span,.burger span::before,.burger span::after{transition:transform .25s,top .25s,background .2s}
+ .burger[aria-expanded="true"] span{background:transparent}
+ .burger[aria-expanded="true"] span::before{top:0;transform:rotate(45deg)}
+ .burger[aria-expanded="true"] span::after{top:0;transform:rotate(-45deg)}
+ .nav{background:#000;top:96px;left:0;right:0;bottom:0;height:calc(100vh - 96px);max-height:none;padding:0;position:fixed}
+ .nav.open{display:block;overflow:auto}
+ .nav>ul{padding:18px 44px 40px;flex-direction:column;align-items:stretch}
+ .nav>ul>li>a,.nav>ul>li>.sub-toggle{padding:19px 0;border:0;font:700 16px/1.2 "Fira Sans",sans-serif;display:flex;justify-content:space-between;align-items:center;width:100%;text-align:left;color:#fff}
+ .nav .has-sub>.sub-toggle::after{content:"+";border:0;transform:none;width:auto;height:auto;margin:0;font:400 24px/1 "Fira Sans",sans-serif}
+ .nav .has-sub.open>.sub-toggle::after{content:"–"}
+ .nav ul.sub,.site-header.stuck .nav ul.sub{position:static;display:none;padding:0 0 8px 14px;background:none;box-shadow:none}
+ .nav .has-sub.open>ul.sub{display:flex}
+ .nav ul.sub.mega{flex-direction:column;width:auto;max-width:none}
+ .nav ul.sub a{padding:12px 0 12px 16px;font-weight:400;font-size:16px;color:#ddd}
+ .nav ul.sub.mega>li.mcol{padding:6px 0 10px;min-width:0;border:0!important}
+ .mh{color:#8fd3f4;border:0;padding-bottom:6px}
+ body.nav-lock{overflow:hidden}
+ .site-header.menu-open .tb-right{gap:18px}
+ .slide .wrap{padding-left:max(24px,6vw)}
+ .slider,.slides,.slide .wrap{min-height:520px}
+}
