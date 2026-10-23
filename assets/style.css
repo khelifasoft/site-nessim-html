@@ -550,3 +550,10 @@ body{font-size:17px}
  .slide .wrap{padding-left:max(24px,6vw)}
  .slider,.slides,.slide .wrap{min-height:520px}
 }
+
+/* ===== en-tête réduit : sous-menus compacts ===== */
+@media(min-width:1061px){
+ .site-header.stuck .nav ul.sub a{padding:7px 0 7px 16px;font-size:15px;line-height:1.3}
+ .site-header.stuck .nav ul.sub.mega>li.mcol{padding:20px 32px 22px;min-width:270px}
+ .site-header.stuck .mh{padding-bottom:11px;margin-bottom:8px;font-size:15.5px}
+}
