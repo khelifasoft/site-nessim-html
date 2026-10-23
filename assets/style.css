@@ -384,3 +384,8 @@ body{font-size:16px;line-height:1.8}
  .nav ul.sub.mega>li.mcol{padding:6px 0 10px;min-width:0}.nav ul.sub.mega>li.mcol+li.mcol{border-left:0}
  .nav ul.sub{padding:6px 0 10px 14px;box-shadow:none}.mh{color:#8fd3f4;padding-bottom:6px;border-bottom:0;margin:6px 0 2px}
 }
+
+/* page équipe : portraits à taille identique */
+.pg-team .elimg img{width:240px;height:310px;max-height:none;object-fit:cover;object-position:50% 12%;border-radius:4px;margin-inline:auto}
+.pg-team .elcol h3,.pg-team .elcol h2{text-align:center}
+.pg-team .te,.pg-team .te p{text-align:center;margin-inline:auto}
