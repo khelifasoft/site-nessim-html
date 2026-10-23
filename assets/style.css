@@ -587,3 +587,20 @@ body{font-size:17px}
  .site-header:not(.stuck) .sp-open span,.site-header:not(.stuck) .sp-open span::before,.site-header:not(.stuck) .sp-open span::after{width:24px;background:#fff}
  .site-header:not(.stuck) .sp-open span::before{top:-7px}.site-header:not(.stuck) .sp-open span::after{top:7px}
 }
+
+/* ===== sélecteur de langue : drapeaux en relief (3D) ===== */
+.lm-list{perspective:700px;gap:56px}
+.lm-list a{flex-direction:column;gap:16px;font-size:1.1rem;opacity:.9}
+.lm-list .flag{position:relative;width:78px;height:78px;overflow:visible;box-shadow:none;transform-style:preserve-3d;
+  filter:drop-shadow(0 14px 14px rgba(0,0,0,.55)) drop-shadow(0 3px 3px rgba(0,0,0,.35));
+  transition:transform .35s cubic-bezier(.2,.7,.2,1),filter .35s}
+.lm-list .flag svg{border-radius:50%}
+.lm-list .flag::before{content:"";position:absolute;inset:0;border-radius:50%;z-index:2;pointer-events:none;
+  background:radial-gradient(circle at 32% 24%,rgba(255,255,255,.75) 0,rgba(255,255,255,.28) 22%,rgba(255,255,255,0) 46%),
+             radial-gradient(circle at 50% 50%,rgba(0,0,0,0) 52%,rgba(0,0,0,.38) 100%);
+  box-shadow:inset 0 -7px 12px rgba(0,0,0,.35),inset 0 3px 6px rgba(255,255,255,.35),0 0 0 2px rgba(255,255,255,.18)}
+.lm-list a:hover .flag,.lm-list a:focus-visible .flag{transform:translateY(-8px) rotateX(14deg) rotateY(-14deg) scale(1.12);
+  filter:drop-shadow(0 22px 18px rgba(0,0,0,.6)) drop-shadow(0 4px 4px rgba(0,0,0,.35))}
+.lm-list a[aria-current] .flag::before{box-shadow:inset 0 -7px 12px rgba(0,0,0,.35),inset 0 3px 6px rgba(255,255,255,.35),0 0 0 3px #fff}
+.lm-list a:hover,.lm-list a[aria-current]{opacity:1}
+@media(prefers-reduced-motion:reduce){.lm-list .flag{transition:none}}
