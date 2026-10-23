@@ -557,3 +557,33 @@ body{font-size:17px}
  .site-header.stuck .nav ul.sub.mega>li.mcol{padding:20px 32px 22px;min-width:270px}
  .site-header.stuck .mh{padding-bottom:11px;margin-bottom:8px;font-size:15.5px}
 }
+
+/* ===== bande bleue du menu : 65px comme l'original (bureau) ===== */
+@media(min-width:1061px){
+ :root{--hh:101px}
+ .site-header:not(.stuck) .mainbar{height:65px}
+ .site-header:not(.stuck) .brand{top:-36px;height:101px;width:190px}
+ .site-header:not(.stuck) .brand img{width:158px}
+ .site-header:not(.stuck) .nav a,.site-header:not(.stuck) .sub-toggle{padding:25px 13px;font-size:14px}
+ .site-header:not(.stuck) .nav ul.sub{top:100%}
+ .site-header:not(.stuck) .nav ul.sub a{padding:9px 0 9px 16px}
+ .site-header:not(.stuck) .mainbar .wrap{padding-left:210px}
+ .site-header:not(.stuck) .topbar .wrap{padding-left:210px}
+}
+
+/* ===== bande noire du haut : 65px, icônes seules, comme l'original (bureau) ===== */
+@media(min-width:1061px){
+ :root{--hh:130px}
+ .site-header:not(.stuck) .topbar{height:65px;border-bottom:0}
+ .site-header:not(.stuck) .tb-info{display:none}
+ .site-header:not(.stuck) .topbar .wrap{justify-content:flex-end}
+ .site-header:not(.stuck) .brand{top:-65px;height:136px;width:190px}
+ .site-header:not(.stuck) .brand img{width:165px}
+ .site-header:not(.stuck) .tb-right{gap:22px}
+ .site-header:not(.stuck) .lang-open{font:700 16px "Fira Sans",sans-serif;color:#fff;gap:10px}
+ .site-header:not(.stuck) .lang-open .flag{width:28px;height:28px}
+ .site-header:not(.stuck) .cart-open svg{width:23px;height:23px}
+ .site-header:not(.stuck) .cart-open,.site-header:not(.stuck) .sp-open{color:#fff}
+ .site-header:not(.stuck) .sp-open span,.site-header:not(.stuck) .sp-open span::before,.site-header:not(.stuck) .sp-open span::after{width:24px;background:#fff}
+ .site-header:not(.stuck) .sp-open span::before{top:-7px}.site-header:not(.stuck) .sp-open span::after{top:7px}
+}
