@@ -1,6 +1,6 @@
 (function(){
   var burger=document.querySelector('.burger'),nav=document.getElementById('nav');
-  if(burger){burger.addEventListener('click',function(){var o=nav.classList.toggle('open');burger.setAttribute('aria-expanded',o)})}
+  if(burger){burger.addEventListener('click',function(){var o=nav.classList.toggle('open');burger.setAttribute('aria-expanded',o);document.querySelector('.site-header').classList.toggle('menu-open',o);document.body.classList.toggle('nav-lock',o)})}
   document.querySelectorAll('.sub-toggle').forEach(function(b){b.addEventListener('click',function(){
     var li=b.parentElement,o=li.classList.toggle('open');b.setAttribute('aria-expanded',o)})});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'){document.querySelectorAll('.has-sub.open').forEach(function(x){x.classList.remove('open')})}});
